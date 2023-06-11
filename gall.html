@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organ Donation Gallery</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+
+        html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: "Nunito", sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+
+        }
+
+        .container {
+            width: 90%;
+            margin: 2rem auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 5vw);
+            grid-gap: 1.5rem;
+        }
+
+        .gallery__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: flex;
+            border-style:solid;
+            border-color: black;
+            border-width: 7px;
+        }
+
+        .gallery__item--1 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 5;
+        }
+
+        /** Alternative Syntax **/
+        /* grid-column: 1 / span 2;  */
+        /* grid-row: 1 / span 2; */
+        /* }  */
+
+        .gallery__item--2 {
+            grid-column-start: 5;
+            grid-column-end: 30;
+            grid-row-start: 1;
+            grid-row-end: 6;
+        }
+
+        .gallery__item--3 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 5;
+            grid-row-end: 15;
+        }
+
+        .gallery__item--4 {
+            grid-column-start: 5;
+            grid-column-end: 10;
+            grid-row-start: 6;
+            grid-row-end: 15;
+        }
+
+        .gallery__item--5 {
+            grid-column-start: 12;
+            grid-column-end: 30;
+            grid-row-start: 6;
+            grid-row-end: 15;
+        }
+
+        .gallery__item--6 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 15;
+            grid-row-end: 20;
+        }
+
+        .gallery__item--7 {
+            grid-column-start: 5;
+            grid-column-end: 30;
+            grid-row-start: 15;
+            grid-row-end: 25;
+        }
+
+        .gallery__item--8 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 20;
+            grid-row-end: 25;
+        }
+
+        .gallery__item--9 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 25;
+            grid-row-end: 30;
+        }
+
+        .gallery__item--10 {
+            grid-column-start: 5;
+            grid-column-end: 30;
+            grid-row-start: 25;
+            grid-row-end: 30;
+        }
+
+        .gallery__item--11 {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 30;
+            grid-row-end: 35;
+        }
+
+        .gallery__item--12 {
+            grid-column-start: 6;
+            grid-column-end: 30;
+            grid-row-start: 30;
+            grid-row-end: 35;
+        }
+
+        .gallery__item--13 {
+            grid-column-start: 1;
+            grid-column-end: 10;
+            grid-row-start: 35;
+            grid-row-end: 40;
+        }
+
+        .gallery__item--15 {
+            grid-column-start: 8;
+            grid-column-end: 30;
+            grid-row-start: 35;
+            grid-row-end: 40;
+        }
+
+        .gallery__item--14 {
+            grid-column-start: 1;
+            grid-column-end: 30;
+            grid-row-start: 40;
+            grid-row-end: 45;
+        }
+
+        .gallery__item--16 {
+            grid-column-start: 1;
+            grid-column-end: 8;
+            grid-row-start: 45;
+            grid-row-end: 50;
+        }
+
+        .gallery__item--17 {
+            grid-column-start: 8;
+            grid-column-end: 30;
+            grid-row-start: 45;
+            grid-row-end: 50;
+        }
+
+        .gallery__item--18 {
+            grid-column-start: 1;
+            grid-column-end: 8;
+            grid-row-start: 50;
+            grid-row-end: 55;
+        }
+
+        .gallery__item--19 {
+            grid-column-start: 8;
+            grid-column-end: 30;
+            grid-row-start: 50;
+            grid-row-end: 55;
+        }
+
+        .gallery__item--20 {
+            grid-column-start: 1;
+            grid-column-end: 30;
+            grid-row-start: 55;
+            grid-row-end: 60;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1
+        style="font-family: 'Sedgwick Ave Display', cursive; font-size: 60px; text-align: center; text-decoration:underline;">
+        Gallery</h1>
+    <div class="container">
+        <div class="gallery" id="gallery">
+            <figure class="gallery__item gallery__item--1">
+                <a href="gallery/o1.jpg">
+
+                    <img src="gallery/o1.jpg" alt="Gallery image 1" class="gallery__img">
+                </a>
+            </figure>
+
+            <figure class="gallery__item gallery__item--2">
+                <a href="gallery/o2.jpg">
+                    <img src="gallery/o2.jpg" alt="Gallery image 2" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--3">
+                <a href="gallery/o3.jpg">
+                    <img src="gallery/o3.jpg" alt="Gallery image 3" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--4">
+                <a href="gallery/o4.jpg">
+                    <img src="gallery/o4.jpg" alt="Gallery image 4" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--5">
+                <a href="gallery/o5.jpg">
+                    <img src="gallery/o5.jpg" alt="Gallery image 5" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--6">
+                <a href="gallery/o6.jpg">
+                    <img src="gallery/o6.jpg" alt="Gallery image 6" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--7">
+                <a href="gallery/o7.jpg">
+                    <img src="gallery/o7.jpg" alt="Gallery image 7" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--8">
+                <a href="gallery/o8.jpg">
+                    <img src="gallery/o8.jpg" alt="Gallery image 8" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--9">
+                <a href="gallery/o9.jpg">
+                    <img src="gallery/o9.jpg" alt="Gallery image 9" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--10">
+                <a href="gallery/o10.jpg">
+                    <img src="gallery/o10.jpg" alt="Gallery image 10" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--11">
+                <a href="gallery/o11.jpg">
+                    <img src="gallery/o11.jpg" alt="Gallery image 11" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--12">
+                <a href="gallery/o12.jpg">
+                    <img src="gallery/o12.jpg" alt="Gallery image 12" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--13">
+                <a href="gallery/o13.jpg">
+                    <img src="gallery/o13.jpg" alt="Gallery image 13" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--15">
+                <a href="gallery/o15.jpg">
+                    <img src="gallery/o15.jpg" alt="Gallery image 15" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--14">
+                <a href="gallery/o14.jpg">
+                    <img src="gallery/o14.jpg" alt="Gallery image 14" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--16">
+                <a href="gallery/o16.jpg">
+                    <img src="gallery/o16.jpg" alt="Gallery image 16" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--17">
+                <a href="gallery/o17.jpg">
+                    <img src="gallery/o17.jpg" alt="Gallery image 17" class="gallery__img">
+                </a>
+            </figure>
+
+            <figure class="gallery__item gallery__item--18">
+                <a href="gallery/o18.jpg">
+                    <img src="gallery/o18.jpg" alt="Gallery image 18" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--19">
+                <a href="gallery/o19.jpg">
+                    <img src="gallery/o19.jpg" alt="Gallery image 19" class="gallery__img">
+                </a>
+            </figure>
+            <figure class="gallery__item gallery__item--20">
+                <a href="gallery/o20.jpg">
+                    <img src="gallery/o20.jpg" alt="Gallery image 20" class="gallery__img">
+                </a>
+            </figure>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.container').magnificPopup({
+                type: 'image',
+                delegate: 'a',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

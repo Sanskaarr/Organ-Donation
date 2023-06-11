@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Info</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="med.css" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="form.js"></script>
+  </head>
+
+<body>
+  <h1>REGISTRATION FORM</h1>
+  <div class="co">
+    <div class="container">
+      <form action="med.php" method="post" id="register">
+      <h2>Medical details</h2>
+      <div class="row">
+        <div class="col">
+          <h4>Blood Group</h4>
+          <select name="bg" id="bg" class="form-control">
+            <option value="">Select</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">&nbsp;
+        <h4>Family history illness</h4>
+        <select name="illness" id="illness" class="form-control">
+          <option value="">Select</option>
+          <option value="Ashtma">Ashtma</option>
+          <option value="Tuberclosis">Tuberclosis</option>
+          <option value="Cardiovascular Disease">Cardiovascular Disease</option>
+          <option value="Hypeternsion">Hypeternsion</option>
+          <option value="Diabetes Mellitus">Diabetes Mellitus</option>
+          <option value="Others">Others (Please Mention in the box Given Below)</option>
+        </select>&nbsp;
+        <input type="text" class="form-control" placeholder="Please specify" aria-label="Please specify" id="text" name="text"/>
+      </div>
+      <div class="col form-floating">&nbsp;
+        <h5>Do you have any allergies? If yes, then please specify below, If No, Write NA.</h5>
+        <input type="text" class="form-control" placeholder="Leave a comment here" id="allergies"
+          style="height: 100px" name="allergies">
+      </div>
+      <div class="col form-floating">&nbsp;
+        <h5>
+          What is your current medical condition? Do you have any communicable
+          disease, cardiovascular problems, diabetes, asthma etc.? If No, Write NA.
+        </h5>
+        <input type="text" class="form-control" placeholder="Leave a comment here" id="medical"
+          style="height: 100px" name="medical">
+      </div>
+      <div class="col form-floating">&nbsp;
+        <h5>Previous hospitalization (Provide the reason and treatment), If No, Write NA.</h5>
+        <input type="text" class="form-control" placeholder="Leave a comment here" id="hospital"
+          style="height: 100px" name="hospital">
+      </div>
+      <input type="submit" class="but" onclick="return form2()" value="Next">
+    </form>
+    </div>
+   
+  </div>
+</body>
+
+</html>
