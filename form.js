@@ -113,6 +113,12 @@ function form2(){
         alert('Please Write About details for your family Illness in the Box Below');
         return validate2 = false;
     }
+
+    var organ = document.getElementById('organ').value;
+    if(organ == null || organ == ""){
+        alert('Please Select your Organ to Donate !!');
+        return validate2 = false;
+    }
   
     var allergies = document.getElementById('allergies').value;
     if(allergies == null || allergies == ""){

@@ -14,11 +14,12 @@ if(!$con){
 $blood = $_POST["bg"];
 $illness = $_POST["illness"];
 $text = $_POST["text"];
+$organ = $_POST["organ"];
 $allergies = $_POST["allergies"];
 $medical = $_POST["medical"];
 $hospital = $_POST["hospital"];
 
-$sql = "INSERT INTO `med` (`blood`, `illness`, `text`, `allergies`, `medical`, `hospital`) VALUES ('$blood', '$illness', '$text', '$allergies', '$medical', '$hospital');";
+$sql = "INSERT INTO `med` (`blood`, `illness`, `text`, `organ`, `allergies`, `medical`, `hospital`) VALUES ('$blood', '$illness', '$text', '$organ', '$allergies', '$medical', '$hospital');";
 
 if (mysqli_query($con, $sql)) {
     echo "<script>
