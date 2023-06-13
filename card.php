@@ -29,6 +29,7 @@ if(mysqli_num_rows($results) > 0){
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="card.css" />
+    <script src="form.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -54,50 +55,61 @@ if(mysqli_num_rows($results) > 0){
   </head>
   <body>
     <div class="check">
-    <form action="card.php" method="post">
-            <input type="text" name="search" id="search">
-            <button>Search</button>
+    <form action="card.php" method="post" onsubmit="return check()">
+      <h1 style="text-align: center; color: rgb(15, 244, 252); background-color: rgb(0, 80, 104); font-size:35px;">
+         Write your name to get your donor card<br>(as per your registeration form)</h1>
+        
+            <input type="text" name="search" id="search" style="margin-top: 1em; margin-left:35em;">
+            <button  onClick="document.getElementById('container').scrollIntoView();" />Search</button>
         </form>
     </div>
-    <div class="container">
-      <h1>ORGAN DONOR CARD</h1>
+   
+    <div class="container" id="container">
+      <h1 style="font-style:bold; color:rgb(24, 47, 116); font-weight:800; text-decoration-line: underline;">ORGAN DONOR CARD</h1>
       <br>
       <div class="card" style="width: 18rem; position:absolute;">
-        <img class="card-img-top" src="./php/<?php echo $fetch['photo']; ?>" alt="Card image cap" />
-        
+        <img class="card-img-top" src="./php/<?php echo $fetch['photo']; ?>"/>
       </div><br>
       <h3>
      
 
-         I<u><?php echo $fetch['name']?></u> son<input type="radio" name="radio" value="son"/> /daughter <input type="radio" name="radio" value="daughter"/> /wife <input
-          type="radio" name="radio" value="wife"/> of <input type="text"/>in the <br>hope that I may help others hereby make
-        this anatomical gift,<br> if  medically acceptable to take effect upon my
-        brain death. I <br>hereby wish to donate the following organs.
+        I <u><?php echo $fetch['name']?></u> son <input type="radio" name="radio" value="son"/> /daughter <input type="radio" name="radio" value="daughter"/> /wife <input
+          type="radio" name="radio" value="wife"/> of <input type="text" /> <br> in the hope that I may help others hereby make
+        this <br>anatomical gift, if  medically acceptable to take effect upon <br>my
+        brain death. I hereby wish to donate the following organs.
       </h3>
       <br>
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
-      <h4>Special wishes, if any  <textarea class="sc" rows="4" cols="40"></textarea></h4>
+      
+      <h4>Special wishes, if any</h4><textarea class="sc" rows="2" cols="50" style="margin-right:50em;"></textarea>
     </div>
     <div class="cont">
-      <h4 style="text-align:center;">Signed by the Donor in the presence of two witnesses<br>
-      Signature of Donor <img src="./php/<?php echo $fetch['sign']; ?>"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date of Birth <u><?php echo $fetch['dob']?></u><br> <br> <br> <br> 
-      Address of Donor <u><?php echo $fetch['address']?></u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telephone No. <u><?php echo $fetch['phone']?></u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Blood Group <u><?php echo $fetch['blood']?></u>
+      <h4 style="text-align:center; color:rgb(3, 3, 158); font-weight: 600;">Signed by the Donor in the presence of two witnesses</h4><br>
+      <h5 style="position:absolute; margin-top:0%;">Address of Donor:  <u><?php echo $fetch['address']?></u></h5> 
+      <h5 style="text-align:center;">Date of Birth: <u><?php echo $fetch['dob']?></u> </h5> <br> <br> <br> <br> 
+      <h5 style="position:absolute; margin-top:0%;"> Blood Group: <u><?php echo $fetch['blood']?></u></h5>
+      <h5 style="text-align:center;">Telephone No: <u><?php echo $fetch['phone']?></u></h5> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <br> <br> <br> 
+      <h5 style="position:absolute; margin-top:0%;">Signature of Donor: <img src="./php/<?php echo $fetch['sign']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5> 
+      <h5 style="text-align:center; margin-left:-5%">First Witness Signature: <img src="./php/<?php echo $fetch['fwsign']; ?>"></h5> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <h5 style="text-align:right; margin-top: -20%;"> Second Witness Signature: <img src="./php/<?php echo $fetch['swsign']; ?>"></h5>  <br> <br> <br> <br>
       <br> <br> <br> <br>
-      First Witness Signature <img src="./php/<?php echo $fetch['fwsign']; ?>">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Second Witness Signature <img src="./php/<?php echo $fetch['swsign']; ?>">    <br> <br> <br> <br>
-      <br> <br> <br> <br>
-      <br> <br> <br> <br>
-      <h5 style="text-align:center;"> ORGAN RETRIEVAL BANKING ORGANISATION (ORBO) <br> A.I.M.S., Ansari Nagar, New Delhi-110 029 <br>
+      
+      <h5 style="text-align:center; font-style:bold; color:rgb(24, 47, 116); font-weight:800; text-decoration-line: underline;"> ORGAN RETRIEVAL BANKING ORGANISATION (ORBO) <br> A.I.M.S., Ansari Nagar, New Delhi-110 029 <br>
       Tel. No. : 26593444, 26588360</h5>
       </h>
-      <?php
+    </div>
+ <?php
     }
 }
+else{
+  echo "<script>
+  alert('No Result Found !!');
+  window.location.href = 'card.html';
+  </script>";
+}
 ?>
-    </div>
-  </body>
+  </body> 
 </html>
+
