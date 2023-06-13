@@ -33,7 +33,7 @@ $sql = "INSERT INTO `doc` (`photo`, `idd`, `sign`, `fwsign`, `swsign`) VALUES ('
  
 if (mysqli_query($con, $sql)) {
 echo "<script>
-    alert('Thank you For Submitting the Form !!');
+    alert('Thank you For Registration and Submitting the Form !!');
     </script>";
 }
 
@@ -43,31 +43,31 @@ else {
 
 if(move_uploaded_file($photo,$folder1)){
     echo "<script>
-        window.location.href = 'donorcard.php'
+        window.location.href = 'card.html'
     </script>";
 }
 
 if(move_uploaded_file($idd,$folder2)){
     echo "<script>
-    window.location.href = 'dashboard.html'
+    window.location.href = 'card.html'
     </script>";
 }
 
 if(move_uploaded_file($sign,$folder3)){
     echo "<script>
-        window.location.href = 'dashboard.html'
+        window.location.href = 'card.html'
     </script>";
 }
 
 if(move_uploaded_file($fwsign,$folder4)){
     echo "<script>
-    window.location.href = 'dashboard.html'
+    window.location.href = 'card.html'
     </script>";
 }
 
 if(move_uploaded_file($swsign,$folder5)){
     echo "<script>
-    window.location.href = 'dashboard.html'
+    window.location.href = 'card.html'
     </script>";
 }
 mysqli_close($con);

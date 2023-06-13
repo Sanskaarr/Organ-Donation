@@ -33,7 +33,7 @@
                         <span class="nav-item">Lungs Donors</span>
                     </a></li>
 
-                <li><a href="index.html">
+                <li><a href="adminsearch.html">
                     <i class="fas fa-search"></i>
                         <span class="nav-item">Search Donors</span>
                     </a></li>

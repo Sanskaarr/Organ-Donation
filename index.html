@@ -2,54 +2,381 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Admin</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="admin.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css”>
+
+  <link href=“https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css” rel=“stylesheet”>
+
+  <script src=“https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js” charset=“utf-8”></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 
 <body>
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="#" class="logo">
-                        <img src="img/a.jpg" alt="">
-                        <span class="nav-item">COMPONENT</span>
-                    </a></li>
-                <li><a href="admin.html">
-                     <i class="fas fa-user-md"></i>
-                        <span class="nav-item">Donor Details</span>
-                    </a></li>
-
-                    <li><a href="heart.php">
-                        <i class="fas fa-heart"></i>                     
-                        <span class="nav-item">Heart Donors</span>
-                    </a></li>
-                    
-                    <li><a href="lung.php">
-                        <i class="fas fa-lungs"></i>                   
-                        <span class="nav-item">Lungs Donors</span>
-                    </a></li>
-
-                <li><a href="index.html">
-                    <i class="fas fa-search"></i>
-                        <span class="nav-item">Search Donors</span>
-                    </a></li>
-
-                <li><a href="logout.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li>
-            </ul>
-        </nav>
+ 
+  <div class="container">
+    <div class="h" style="display: flex; margin-left:-17em;">
+      <img src="home/life.png">
+      <h1 style="font-style:italic; font-weight:700; color:rgb(175, 25, 88); font-size:50px;"> अंगदान</h1>
     </div>
-    <div class="form">
-         <form action="searcho.php" method="post">
-        <input type="text" name="search" id="search" class="search">
-        <button>Search</button>
-    </form>
+    <div class="nav" style="display: flex;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Law
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Law.html">Acts, Rules, Bills & GOs</a></li>
+                <li><a class="dropdown-item" href="inquest.html">Orders, Judgements & Forms</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="gall.html">Gallery</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                About us
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="team.html">Team Doante Life</a></li>
+                <li><a class="dropdown-item" href="donatelife.html">About Donate Life</a></li>
+                <li><a class="dropdown-item" href="mission.html">Mission, vision and core values</a></li>
+                <li><a class="dropdown-item" href="role.html">Role of donate life</a></li>
+                <li><a class="dropdown-item" href="found.html">About our founders & presidents</a></li>
+                <li><a class="dropdown-item" href="awards.html">Awards and appreciations</a></li>
+                <li><a class="dropdown-item" href="Feel.html">Feelings of organ reciptants, green corridor
+                    systems</a></li>
+              </ul>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="adminlogin.html">Admin</a>
+              </li>
+          </ul>
+          </li>
+          </ul>
+          <button class="but" onclick='confirmAction()'> Application Form</button>
+        </div>
     </div>
+
+  </div>
+
+  </nav>
+
+
+  </div>
+  <div class="to">
+
+    <figure>
+      <img src="home/d.png">
+    </figure>
+
+    <div class="first">
+      <p style="color: rgb(149, 241, 172); background-color:teal; font-size: 44px; width:6em; margin:2em; font-family: 'Lobster', cursive;
+       font-family: 'Pacifico', cursive;
+       font-family: 'Titan One', cursive;"> EVERYDAY</p><br>
+      <p
+        style=" position: absolute;  font-size:35px; margin-top:-3em; margin-left:3em; font-style: italic;  color:rgb(28, 36, 151); font-weight:700; ">
+        people need</p>
+      <p
+        style="color: rgb(149, 241, 172); background-color:teal; font-size: 44px; width:7em; position:absolute; margin-left:1.5em; margin-top:-1em;">
+        TRANSPLANTS</p><br>
+      <p
+        style=" position: absolute;  font-size:35px;  margin-left:2em; font-style: italic;  color:rgb(28, 36, 151); font-weight:700; ">
+        from the very young <br> to the very old.</p>
+      <h2
+        style="position: absolute; margin-top: 2.5em; margin-left:1em; font-size:50px; font-style: bold; font-weight: 800;  ">
+        BECOME A DONOR</h2>
+    </div>
+    <div class="left">
+    </div>
+    <div class="organ">
+      <b
+        style="margin-left:35%;font-size:40px;font-weight: 700; font-style: italic; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-decoration: underline; ">TYPES
+        OF ORGAN DONATION</b>
+      <div class="card1"  style="width: 18rem; position: absolute; text-align: center;">
+
+        <img src="home/lung.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">LUNGS</p>
+        </div>
+      </div>
+      <div class="card1" style="width: 18rem; margin-left: 65em; margin-bottom:30em; text-align: center; ">
+        <img src="home/liver.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">LIVER</p>
+        </div>
+      </div>
+      <div class="card1" style="width: 18rem; margin-left: 65em; margin-top: -30em;text-align: center;">
+        <img src="home/pancreas.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">PANCREAS</p>
+        </div>
+      </div>
+      <div class="card1" style="width: 18rem; margin-top: -15em; text-align: center;">
+        <img src="home/skin.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">SKIN</p>
+        </div>
+      </div>
+      <div class="card1" style="width: 18rem;text-align: center;">
+        <img src="home/tendon.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">TENDON</p>
+        </div>
+      </div>
+      <div class="card1" style="width: 18rem; margin-left:65em; text-align: center; margin-top: -23em; height:23em;">
+        <img src="home/valve.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">VALVE</p>
+        </div>
+      </div>
+
+
+      <img src="home/human.png" class="img-fluid" alt="...">
+    </div>
+
+  </div>
+  <div class="cl" style="margin-top: 100em; position:absolute; background: #D3959B;  
+  background: -webkit-linear-gradient(to right, #BFE6BA, #D3959B);  
+  background: linear-gradient(to right, #BFE6BA, #D3959B);width:100%; border-radius:50px 10px 50px 10px ">
+    <img src="home/c.png">
+    <h1 style="margin-left:20em; margin-top:-10em;" data-aos="fade-left" aos-duration="150"> Every donor can save <p
+        style="color:purple"> 8 lives</p> and enhance over<p style="color:purple">75 more.</p>
+      <h3 style="margin-left:16em; font-size:50px;font-style: bold; font-weight: 800; color:rgb(184, 52, 29)">You can
+        help.</h3>
+    </h1>
+  </div>
+
+
+
+      <!-- Frequently Ask Questions (FAQ) -->
+  <div class="im" style="margin-top:130em;">
+    <div class="fq" style="margin-top:110em;">
+      <h1 style="text-decoration: underline;"> Frequently Ask Questions (FAQ)</h1>
+      <div class="accordion-flush" id="accordionExample">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne" style="background-color:#8a133b; color:#fff">
+              What are the different types of Organ Donation?
+            </button>
+          </h3>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              There are two types of organ donation:-<br>
+
+              <strong>1. Living Donor Organ Donation:</strong> A person during his life can donate one kidney (the other
+              kidney is capable
+              of maintaining the body functions adequately for the donor), a portion of pancreas (half of the pancreas
+              is adequate for sustaining pancreatic functions) and a part of the liver (the segments of liver will
+              regenerate after a period of time in both recipient and donor).<br>
+              <strong>2. Donor Organ Donation:</strong> A person can donate multiple organ and tissues after
+              (brain-stem/cardiac)
+              death. His/her organcontinues to live in another personӳ body.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+              style="background-color:#8a133b; color:#fff">
+              Is there any age limit for Organ Donation?
+
+            </button>
+          </h3>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Age limit for Organ Donation varies, depending upon whether it is living donation or cadaver donation; for
+              example in living donation, person should be above 18 year of age, and for most of the organs deciding
+              factor is the person's physical condition and not the age. In the case of tissues and eyes, age usually
+              does not matter. A deceased donor can generally donate the Organs & Tissues with the age limit of:<br>
+
+              <strong> 1.lungs : up-to 50 years<br>
+                2. Pancreas, Intestine : up-to 60-65 years<br>
+                3. Corneas, skin : up-to 100 years<br>
+                4. Heart valves : up-to 50 years<br>
+                5. Bone : up-to 70 years</strong>
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+              style="background-color:#8a133b; color:#fff">
+              Who can be a Donor?
+            </button>
+          </h3>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>1. Living Donor:</strong> Any person not less than 18 years of age, who voluntarily authorizes the
+              removal of any of
+              his organ and/or tissue, during his or her lifetime, as per prevalent medical practices for therapeutic
+              purposes.<br>
+              <strong>Deceased Donor:</strong> Anyone, regardless of age, race or gender can become an organ and tissue
+              donor after his
+              or her Death (Brainstem/Cardiac). Consent of near relative or a person in lawful possession of the dead
+              body is required. If the deceased donor is under the age of 18 years, then the consent required from one
+              of the parent or any near relative authorized by the parents is essential. Medical suitability for
+              donation is determined at the time of death.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"
+              style="background-color:#8a133b; color:#fff">
+              Can a person, without a family, register for pledge?
+
+            </button>
+          </h3>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Yes, you can pledge, but you need to preferably inform the person closest to you in life, a friend of long
+              standing or a close colleague, about your decision of pledging. To fulfill your donation wishes,
+              healthcare professionals will need to speak to someone else at the time of your death for the consent.
+
+
+            </div>
+          </div>
+        </div>
+        <div class=" accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"
+              style="background-color:#8a133b; color:#fff">
+              Can I be a donor if I have an existing medical condition?
+
+            </button>
+          </h3>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Yes, in most circumstances you can be a donor. Having a medical condition does not necessarily prevent a
+              person from becoming an organ or tissue donor. The decision about whether some or all organs or tissue are
+              suitable for transplant is made by a healthcare professional, taking into account your medical
+              history.<br>
+
+              In very rare cases, the organs of donors with HIV or hepatitis-C have been used to help others with the
+              same conditions. This is only ever carried out when both parties have the condition. All donors have
+              rigorous checks to guard against infection.
+
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix"
+              style="background-color:#8a133b; color:#fff">
+              How does whole body donation differ from organ donation?
+
+            </button>
+          </h3>
+          <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong> Organ donation</strong> for therapeutic purposes is covered under the Transplantation of Human
+              Organs Act (THOA
+              1994). <br> <strong>Whole body</strong> donation is covered by the Anatomy Act 1984.<br>
+
+              <code>Organ and Tissue donation</code> is defined as the act of giving life to others after death by
+              donating his/her
+              organs to the needy suffering from end stage organ failure.<br>
+
+              <code>Body donation</code> is defined as the act of giving oneӳ body after death for medical research and
+              education.
+              Those donated cadavers remain a principal teaching tool for anatomists and medical educators teaching
+              gross anato. <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+
+
+    <!-- About -->
+    <footer>
+      <div class="content">
+        <div class="box">
+          <div class="upper">
+            <div class="topic">About us</div>
+            <p>Organ donation takes healthy organs and tissues from one person for transplantation into another. Experts
+              say that the organs from one donor can save or help as many as 50 people. Organs you can donate include:
+              <br>
+              - Internal organs: Kidneys, heart, liver, pancreas, intestines, lungs <br>
+              - Skin <br>
+              - Bone and bone marrow <br>
+              - Cornea <br>
+          </div>
+          <div class="lower">
+            <div class="topic">Contact us</div>
+            <div class="phone">
+              <a href="#"><i class="fas fa-phone-volume"></i>+91 8178131534</a>
+            </div>
+            <div class="email">
+              <a href="#"><i class="fas fa-envelope"></i>organdonation@gov.in</a>
+            </div>
+          </div>
+        </div>
+        <div class="media-icons">
+          <p>Connect With Us</p>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        </form>
+      </div>
+  </div>
+  <div class="bottom" style="background-color: #461616; color: #fff; text-align: center;">
+    <p>Copyright © 2023 <a href="#">ORBO</a> All rights reserved</p>
+  </div>
+  </footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    function confirmAction() {
+      let confirmAction = confirm("Are you Over 18+" + "\n" + "If yes press Ok" + "\n"+ "Otherwise Cancel");
+      if (confirmAction) {
+        window.location.href = "reg.html";
+      } else {
+        alert('You are Not Eligible to Donate');
+        window.location.href = "index.html";
+      }
+    }
+  </script>
 </body>
+
 </html>

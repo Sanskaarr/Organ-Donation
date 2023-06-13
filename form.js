@@ -175,15 +175,16 @@ function form3(){
         return false;
     }
 
-    // if(validate3 = true){
-    //     return true; 
-    // }
-         //  $("form").submit(function(){
-        //     alert("Submitted");
-        //   });
-
-
 }
+
+function check(){
+    var search = document.getElementById('search').value;
+    if(search == null || search == ""){
+        alert('Please Enter ypur Name for Verification !!');
+        return false;
+    }
+}
+
 
 $("#register").submit(function(e) {
     e.preventDefault();

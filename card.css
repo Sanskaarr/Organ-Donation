@@ -1,0 +1,32 @@
+img{
+ 
+     height: 200px;
+     width:150px;
+     object-fit:cover;
+     background:rgb(71, 46, 161);
+    
+}
+.container{
+    width: 30em;
+    text-align: center;
+    border-style: solid;
+
+
+    margin:5em;
+    margin-left: 15em;
+   
+}
+h3{
+    margin-left:10em;
+    margin-top:50em;
+}
+h4{
+    text-align:left;
+}
+.cont{
+    text-align:left;
+    width:60%;
+    border-style: solid;
+  
+    margin-left: 18em;
+}

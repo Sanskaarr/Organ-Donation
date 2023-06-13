@@ -12,10 +12,11 @@ h1 {
 .container {
   display: flex;
   width: 50em;
+  
 }
 
 .navbar {
-  margin-left: 10rem;
+  margin-left: 20rem;
 }
 
 .but {
@@ -81,7 +82,7 @@ h2 {
 .organ {
   margin-top: 36em;
   position: absolute;
-  width: 100%;
+  width:100%;
   background: #a1ffce;
   background: -webkit-linear-gradient(to right, #faffd1, #a1ffce);
   background: linear-gradient(to right, #faffd1, #a1ffce);
@@ -95,14 +96,7 @@ h2 {
   background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
   background: linear-gradient(to right, #eaafc8, #654ea3);
 }
-[aos="fade"] {
-  opacity: 0;
-  transition-property: opacity;
-}
 
-[aos="fade"].aos-animate {
-  opacity: 1;
-}
 
 footer {
   width: 100%;

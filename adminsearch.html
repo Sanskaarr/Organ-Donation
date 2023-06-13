@@ -28,7 +28,7 @@
                         <span class="nav-item">Heart Donors</span>
                     </a></li>
                     
-                    <li><a href="lung.php">
+                    <li><a href="lungs.php">
                         <i class="fas fa-lungs"></i>                   
                         <span class="nav-item">Lungs Donors</span>
                     </a></li>
@@ -45,58 +45,11 @@
             </ul>
         </nav>
     </div>
+    <div class="form">
+        <form action="searcho.php" method="post">
+            <input type="text" name="search" id="search">
+            <button>Search</button>
+        </form>
+    </div>
 </body>
-<style>
-        .result2{
-            margin-left:30%;
-            margin-top:-13%;   
-        }
-
-        table{
-
-width:90%;
-border:2px solid purple;
-padding:25px;
-
-}
-        </style>
 </html>
-
-<?php
-    $database = "localhost";
-    $username = "root";
-    $password = "";
-    $server = "organ";
-    $con = mysqli_connect($database, $username, $password, $server);
-    
-    if(!$con){
-        die("Connection Failed !!" .mysqli_connect_error());
-    }
-
-    $sql = "SELECT * FROM `hearts`";
-    $results = mysqli_query($con, $sql);
-
-    if(mysqli_num_rows($results) > 0){
-        While($fetch = mysqli_fetch_array($results)){
-            echo "<div class='result2'>";
-            echo "<table>";
-            echo "<tr>";
-            echo "<th>Name : </th>"."<td>" .$fetch['name']. "</td>";
-            echo "<th>Phone : </th>"."<td>" .$fetch['phone']. "</td>";
-            echo "<th>Address : </th>"."<td>" .$fetch['address']. "</td>";
-            echo "<th>Organ Donated : </th>"."<td>" .$fetch['organ']. "</td>";
-            echo "<th>Blood Group : </th>"."<td>" .$fetch['blood']. "</td>";
-            echo "</tr>";
-            echo "</table>";
-            echo "</div>";
-        }
-    }
-    else{
-            echo "<script>
-            alert('No Result Found !!');
-            window.location.href = 'index.html';
-            </script>";
-            return false;
-        }
-?>
-
