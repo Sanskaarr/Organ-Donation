@@ -52,7 +52,7 @@
         </nav>
     </div>
     <style>
-        .result{
+        .result4{
             margin-left:30%;
             margin-top:-12%;
            
@@ -79,12 +79,12 @@
         die("Connection Failed !!" .mysqli_connect_error());
     }
 
-    $sql = "SELECT * FROM `lungs`";
+    $sql = "SELECT * FROM `reg` INNER JOIN `med` on `reg`.`S.no` = `med`.`S.no`";
     $results = mysqli_query($con, $sql);
 
     if(mysqli_num_rows($results) > 0){
         While($fetch = mysqli_fetch_array($results)){
-            echo "<div class='result'>";
+            echo "<div class='result4'>";
             echo "<table>";
             echo "<tr>";
             echo "<th>Name : </th>"."<td class='a';>" .$fetch['name']. "</td>";

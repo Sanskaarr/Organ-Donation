@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="admin.js"></script>
     <link rel="stylesheet" href="admin.css">
 </head>
 
@@ -14,14 +14,20 @@
     <div class="container">
         <nav>
             <ul>
-                <li><a href="#" class="logo">
+                    <li><a href="#" class="logo">
                         <img src="img/a.jpg" alt="">
                         <span class="nav-item">COMPONENT</span>
                     </a></li>
-                <li><a href="admin.html">
+
+                    <li><a href="admin.html">
                      <i class="fas fa-user-md"></i>
                         <span class="nav-item">Donor Details</span>
                     </a></li>
+
+                    <li><a href="body.php">
+                        <i class="fas fa-child"></i>
+                           <span class="nav-item">Body Details</span>
+                       </a></li>
 
                     <li><a href="heart.php">
                         <i class="fas fa-heart"></i>                     
@@ -33,9 +39,9 @@
                         <span class="nav-item">Lungs Donors</span>
                     </a></li>
 
-                <li><a href="adminsearch.html">
-                    <i class="fas fa-search"></i>
-                        <span class="nav-item">Search Donors</span>
+                    <li><a href="organ.php">
+                        <i class="fas fa-notes-medical"></i>                  
+                        <span class="nav-item">Organ Donors</span>
                     </a></li>
 
                 <li><a href="logout.php" class="logout">
@@ -53,13 +59,12 @@
         }
 
         table{
+            width:90%;
+            border:2px solid purple;
+            padding:25px;
+        }
 
-width:90%;
-border:2px solid purple;
-padding:25px;
-
-}
-        </style>
+</style>
 </html>
 
 <?php

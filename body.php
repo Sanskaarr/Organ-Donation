@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="admin.js"></script>
     <link rel="stylesheet" href="admin.css">
 </head>
 
@@ -14,28 +14,34 @@
     <div class="container">
         <nav>
             <ul>
-                <li><a href="#" class="logo">
+                    <li><a href="#" class="logo">
                         <img src="img/a.jpg" alt="">
                         <span class="nav-item">COMPONENT</span>
                     </a></li>
-                <li><a href="admin.html">
+
+                    <li><a href="admin.html">
                      <i class="fas fa-user-md"></i>
                         <span class="nav-item">Donor Details</span>
                     </a></li>
+
+                    <li><a href="body.php">
+                        <i class="fas fa-child"></i>
+                           <span class="nav-item">Body Details</span>
+                       </a></li>
 
                     <li><a href="heart.php">
                         <i class="fas fa-heart"></i>                     
                         <span class="nav-item">Heart Donors</span>
                     </a></li>
                     
-                    <li><a href="lungs.php">
+                    <li><a href="lung.php">
                         <i class="fas fa-lungs"></i>                   
                         <span class="nav-item">Lungs Donors</span>
                     </a></li>
 
-                <li><a href="adminsearch.html">
-                    <i class="fas fa-search"></i>
-                        <span class="nav-item">Search Donors</span>
+                    <li><a href="organ.php">
+                        <i class="fas fa-notes-medical"></i>                  
+                        <span class="nav-item">Organ Donors</span>
                     </a></li>
 
                 <li><a href="logout.php" class="logout">
@@ -45,12 +51,20 @@
             </ul>
         </nav>
     </div>
-    <div class="form">
-        <form action="searcho.php" method="post">
-            <input type="text" name="search" id="search">
-            <button>Search</button>
-        </form>
-    </div>
+    <style>
+        .result3{
+            margin-left:30%;
+            margin-top:-12%;
+           
+        }
+        table{
+
+            width:90%;
+            border:2px solid purple;
+            padding:25px;
+           
+        }
+    </style>
 </body>
 </html>
 
@@ -65,22 +79,19 @@
         die("Connection Failed !!" .mysqli_connect_error());
     }
 
-    $search = $_POST['search'];
-
-    $search = htmlspecialchars($search);
-    $search = mysqli_real_escape_string($con, $search);
-
-    $sql = "SELECT * FROM `reg` WHERE `name` LIKE '%$search%' ORDER BY `name`";
-    // $sql = "SELECT reg.name, lung.name, heart.name FROM reg INNER JOIN lung ON reg.name=lung.name INNER JOIN heart ON reg.name=heart.name WHERE 'name' LIKE '%$search%' ORDER BY `name`;";
+    $sql = "SELECT * FROM `body`";
     $results = mysqli_query($con, $sql);
 
     if(mysqli_num_rows($results) > 0){
         While($fetch = mysqli_fetch_array($results)){
-            echo "<div class='result'>";
+            echo "<div class='result3'>";
             echo "<table>";
             echo "<tr>";
-            echo "<th>Name : </th>"."<td>" .$fetch['name']. "</td>";
-            echo "<th>Phone : </th>"."<td>" .$fetch['phone']. "</td>";
+            echo "<th>Name : </th>"."<td class='a';>" .$fetch['name']. "</td>";
+            echo "<th>Phone : </th>"."<td class='b';>" .$fetch['phone']. "</td>";
+            echo "<th>Address : </th>"."<td class='c';>" .$fetch['address']. "</td>";
+            echo "<th>Organ Donated : </th>"."<td class='d';>" .$fetch['organ']. "</td>";
+            echo "<th>Blood Group : </th>"."<td class='e';>" .$fetch['blood']. "</td>";
             echo "</tr>";
             echo "</table>";
             echo "</div>";

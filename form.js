@@ -91,9 +91,7 @@ function form1(){
     }
 }
 
-function dob() {
-   
-}
+
 function form2(){
     validate2 = true;
     var bg = document.getElementById('bg').value;
@@ -180,7 +178,7 @@ function form3(){
 function check(){
     var search = document.getElementById('search').value;
     if(search == null || search == ""){
-        alert('Please Enter ypur Name for Verification !!');
+        alert('Please Enter your Name for Verification !!');
         return false;
     }
 }
@@ -189,3 +187,68 @@ function check(){
 $("#register").submit(function(e) {
     e.preventDefault();
 });
+
+
+function signup(){
+    check = true;
+    var username = document.getElementById('txt').value;
+    var usercheck = /^[a-zA-Z]{4,8}$/ 
+    if(username == null || username == ""){
+        alert('Username Cannot be Blank');
+        return check = false;
+    }
+    else if(!username.match(usercheck)){
+        alert("Username Should only contain:- " +
+        "\n" +
+        "A LowerCase Alphabet" +
+        "\n" +
+        "An UpperCase Alphabet"  +
+        "\n" +
+        "Username Should be between 6-8 characters!!");
+        return check = false;
+    }
+
+    var email = document.getElementById('email').value;
+    if(email == null || email == ""){
+        alert('Email Cannot Be Blank');
+        return check = false;
+    }
+
+    var pswd = document.getElementById('pswd').value;
+    var pcheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*+=_-]).{5,10}$/;
+    if(pswd == null || pswd == ""){
+        alert('Password Cannot be Blank');
+        return check = false;
+    }
+    else if (!pswd.match(pcheck)) {
+        alert(
+            "Password Must contain: -" +
+            "\n" +
+            "Atleast one LowerCase Character " +
+            "\n" +
+            "One UpperCase Character" +
+            "\n" +
+            "A Numerical Value " +
+            "\n" +
+            "A special characters" +
+            "\n" +
+            "And must lie between 5-10 characters!!!"
+        );
+        return check = false;
+    }
+}
+
+function login(){
+    login = true;
+    var username = document.getElementById('username').value;
+    if(username == null || username == ""){
+        alert('Please Enter your Username');
+        return login = false;
+    }
+
+    var password = document.getElementById('pswd').value;
+    if(password == null || password == ""){
+        alert('Please Enter your password');
+        return login = false;
+    }
+}

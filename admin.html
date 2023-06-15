@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Admin</title>
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="admin.js"></script>
     <link rel="stylesheet" href="admin.css">
@@ -12,38 +13,126 @@
 
 <body>
     <div class="container">
-        <nav>
-            <ul>
+      <nav>
+        <ul>
                 <li><a href="#" class="logo">
-                        <img src="img/a.jpg" alt="">
-                        <span class="nav-item">COMPONENT</span>
-                    </a></li>
+                    <img src="img/a.jpg" alt="">
+                    <span class="nav-item">COMPONENT</span>
+                </a></li>
+
                 <li><a href="admin.html">
-                     <i class="fas fa-user-md"></i>
-                        <span class="nav-item">Donor Details</span>
-                    </a></li>
+                 <i class="fas fa-user-md"></i>
+                    <span class="nav-item">Donor Details</span>
+                </a></li>
 
-                    <li><a href="heart.php">
-                        <i class="fas fa-heart"></i>                     
-                        <span class="nav-item">Heart Donors</span>
-                    </a></li>
-                    
-                    <li><a href="lung.php">
-                        <i class="fas fa-lungs"></i>                   
-                        <span class="nav-item">Lungs Donors</span>
-                    </a></li>
+                <li><a href="body.php">
+                    <i class="fas fa-child"></i>
+                       <span class="nav-item">Body Details</span>
+                   </a></li>
 
-                <li><a href="adminsearch.html">
-                    <i class="fas fa-search"></i>
-                        <span class="nav-item">Search Donors</span>
-                    </a></li>
+                <li><a href="heart.php">
+                    <i class="fas fa-heart"></i>                     
+                    <span class="nav-item">Heart Donors</span>
+                </a></li>
+                
+                <li><a href="lung.php">
+                    <i class="fas fa-lungs"></i>                   
+                    <span class="nav-item">Lungs Donors</span>
+                </a></li>
 
-                <li><a href="logout.php" class="logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Logout</span>
-                    </a></li>
-            </ul>
-        </nav>
+                <li><a href="organ.php">
+                    <i class="fas fa-notes-medical"></i>                  
+                    <span class="nav-item">Organ Donors</span>
+                </a></li>
+
+            <li><a href="logout.php" class="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-item">Logout</span>
+                </a></li>
+        </ul>
+    </nav>
+        <div class="og">
+            <h2> Total numbers donors who filled form <br> <h1 style="display: inline;">2,00,</h1><p id="nbr" style="display:inline;">500 </p></h1></h2>
+           
+        </div>
+        <div class="bb">
+            <h2> Total numbers donors who donated organs <br><h1>50,</h1><p id="nb" style="display: inline;">200 </p></h2>
+        </div>
+       <div class="cc">
+        <h2> Total numbers donors who have not donated organs <br><h1>1,00,</h1><p id="n" style="display: inline;">000</p></h2>
+    
+       </div>
+       <br>
+       <div class="im" style="position: absolute; margin-top:15em; margin-left: 19em; border-style: solid; border-color: black;">
+        <img src="img/stat.jpg">
+       </div>
+        <div class="i" style="position: absolute; margin-top:15em; margin-left: 52em; border-style: solid; border-color: black;">
+        <img src="img/dec.jpg">
+        </div>
+        
     </div>
+    
+
 </body>
+<script>
+    var speed = 0;
+    function incEltNbr(id) {
+  elt = document.getElementById(id);
+  endNbr = Number(document.getElementById(id).innerHTML);
+  incNbrRec(0, endNbr, elt);
+}
+function incNbrRec(i, endNbr, elt) {
+  if (i <= endNbr) {
+    elt.innerHTML = i;
+    setTimeout(function() {
+      incNbrRec(i + 1, endNbr, elt);
+    }, speed);
+  }
+}
+function incNbr(){
+  incEltNbr("nbr");
+}
+
+incEltNbr("nbr");
+
+var speed = 0;
+    function incEltNb(id) {
+  elt = document.getElementById(id);
+  endNb = Number(document.getElementById(id).innerHTML);
+  incNbRec(0, endNb, elt);
+}
+function incNbRec(i, endNb, elt) {
+  if (i <= endNbr) {
+    elt.innerHTML = i;
+    setTimeout(function() {
+      incNbRec(i + 1, endNb, elt);
+    }, speed);
+  }
+}
+function incNb(){
+  incEltNb("nb");
+}
+
+incEltNb("nb");
+
+var speed = 0;
+    function incEltN(id) {
+  elt = document.getElementById(id);
+  endN = Number(document.getElementById(id).innerHTML);
+  incNRec(0, endN, elt);
+}
+function incNRec(i, endN, elt) {
+  if (i <= endN) {
+    elt.innerHTML = i;
+    setTimeout(function() {
+      incNRec(i + 1, endN, elt);
+    }, speed);
+  }
+}
+function incN(){
+  incEltNb("n");
+}
+
+incEltNb("n");
+</script>
 </html>
