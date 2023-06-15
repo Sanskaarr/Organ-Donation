@@ -26,7 +26,7 @@
 
                     <li><a href="body.php">
                         <i class="fas fa-child"></i>
-                           <span class="nav-item">Body Details</span>
+                           <span class="nav-item">Body Donors</span>
                        </a></li>
 
                     <li><a href="heart.php">
