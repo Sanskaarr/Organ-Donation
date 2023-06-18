@@ -98,8 +98,11 @@ if(mysqli_num_rows($results) > 0){
       
       <h5 style="text-align:center; font-style:bold; color:rgb(24, 47, 116); font-weight:800; text-decoration-line: underline;"> ORGAN RETRIEVAL BANKING ORGANISATION (ORBO) <br> A.I.M.S., Ansari Nagar, New Delhi-110 029 <br>
       Tel. No. : 26593444, 26588360</h5>
-      </h>
-    </div>
+    </h>
+  </div>
+  <a class="btn btn-primary" href="generate.php" role="button">Download as PDF</a>
+  <button class="btn btn-primary" onclick="window.location.href = 'card.html';">Exit</button>
+
  <?php
     }
 }
@@ -109,6 +112,7 @@ else{
   window.location.href = 'card.html';
   </script>";
 }
+
 ?>
   </body> 
 </html>
